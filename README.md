@@ -54,14 +54,13 @@ curl -s http://localhost:9090/api/fondos/clientes/cliente-001/saldo
 curl -s -X POST http://localhost:9090/api/fondos/clientes/recargar -H "Content-Type: application/json" -d "{\"clienteId\":\"cliente-001\",\"monto\":100000}"
 
 
-Segunda parte de la prueba – SQL
+## Segunda parte de la prueba – SQL
 
-En el repositorio se incluye el archivo script.sql, el cual contiene:
+En el repositorio se incluye el archivo **`script.sql`**, el cual contiene:
 
-La creación de la base de datos y las tablas necesarias para el ejercicio.
+- La **creación de la base de datos y las tablas** necesarias para el ejercicio.
+- La **inserción de datos de prueba** para validar las relaciones entre las tablas.
+- La **consulta SQL solicitada en la prueba**, que permite obtener los resultados requeridos según las condiciones planteadas.
 
-La inserción de datos de prueba para poder validar las relaciones entre las tablas.
-
-La consulta SQL solicitada en la prueba, la cual permite obtener los resultados requeridos según las condiciones planteadas.
 
 
