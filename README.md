@@ -2,6 +2,10 @@ Prueba Tecnica BTG
 
 Este proyecto implementa una API REST desarrollada con Spring Boot para la gestión de fondos de inversión y clientes. La aplicación permite registrar clientes, consultar fondos disponibles, suscribirse a un fondo, cancelar suscripciones, consultar el historial de transacciones y enviar notificaciones según la preferencia configurada (EMAIL o SMS).
 
+Cada cliente se crea con un saldo inicial, el cual se utiliza para realizar suscripciones a los diferentes fondos disponibles. Cuando un cliente se suscribe a un fondo, el monto de la inversión se descuenta de su saldo. En caso de cancelar la suscripción, el valor previamente invertido se devuelve nuevamente al saldo del cliente.
+
+Los fondos se inicializan automáticamente al iniciar la aplicación, permitiendo que el sistema cuente desde el inicio con opciones de inversión disponibles para los clientes.
+
 Además, se incluyen endpoints para administrar fondos, consultar y recargar el saldo de los clientes.
 
 Las pruebas de los endpoints se realizan mediante cURL:
@@ -12,11 +16,11 @@ curl -s http://localhost:9090/api/fondos
 
 2. Crear cliente (EMAIL)
 
-curl -s -X POST http://localhost:9090/api/fondos/clientes -H "Content-Type: application/json" -d "{\"id\":\"cliente-001\",\"nombre\":\"Juan Perez\",\"preferenciaNotificacion\":\"EMAIL\",\"email\":\"estivenliscano2017@gmail.com\",\"telefono\":\"3001234567\"}"
+curl -s -X POST http://localhost:9090/api/fondos/clientes -H "Content-Type: application/json" -d "{\"nombre\":\"Juan Perez\",\"preferenciaNotificacion\":\"EMAIL\",\"email\":\"estivenliscano2017@gmail.com\",\"telefono\":\"3001234567\"}"
 
 3. Crear cliente (SMS)
 
-curl -s -X POST http://localhost:9090/api/fondos/clientes -H "Content-Type: application/json" -d "{\"id\":\"cliente-002\",\"nombre\":\"Maria Lopez\",\"preferenciaNotificacion\":\"SMS\",\"email\":\"maria@ejemplo.com\",\"telefono\":\"3216350695\"}"
+curl -s -X POST http://localhost:9090/api/fondos/clientes -H "Content-Type: application/json" -d "{\"nombre\":\"Maria Lopez\",\"preferenciaNotificacion\":\"SMS\",\"email\":\"maria@ejemplo.com\",\"telefono\":\"3216350695\"}"
 
 4. Suscribir a un fondo
 
